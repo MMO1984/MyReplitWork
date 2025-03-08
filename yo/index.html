@@ -1,73 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-
-  <script>
-    // Configuration de MathJax pour repérer les formules au format ...
-    MathJax = {
-      tex: {
-        inlineMath: [['\', '\']],
-        displayMath: [['$$','$$']]
-      }
-    };
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-  
-  <title>Gestion Actif-Passif - Simulation de prix d'obligation</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Chart.js depuis un CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; frame-src *;">
+    <title>Widget Euronews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #0066cc;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Gestion Actif-Passif (ALM) - Simulation de prix d'obligation</h1>
-  </header>
-
-  <main>
-    <section class="resume">
-      <h2>Résumé de cours sur la Gestion Actif-Passif</h2>
-      <p>
-        La gestion actif-passif (<em>Asset Liability Management</em>) consiste à gérer les engagements et 
-        les actifs d’une institution financière (banque, compagnie d’assurance, fonds de pension, etc.) 
-        de manière cohérente, afin de respecter des contraintes de rendement, de risque et de liquidité. 
-        L’un des principes clés est de s’assurer que l’évolution de la valeur des actifs suive celle 
-        des passifs, en tenant compte des risques de taux d’intérêt et autres facteurs de marché.
-      </p>
-      <p>
-        Parmi les instruments financiers utilisés pour gérer ces risques, on retrouve les obligations. 
-        La sensibilité de leur prix au taux d’actualisation (ou taux actuariel, yield-to-maturity) 
-        permet de moduler le risque de taux. Plus la maturité est longue, plus le prix de l’obligation 
-        est sensible aux variations de taux.
-      </p>
-    </section>
-
-    <section class="simulation">
-      <h2>Simulation interactive</h2>
-      <p>
-        Dans cette simulation, nous considérons une obligation <strong>zéro-coupon</strong> d’une valeur 
-        nominale de 100 €, avec différentes maturités (en années). Son prix théorique est calculé selon 
-        la formule :
-      </p>
-      <p class="formula">
-        P = \frac{100}{(1 + r)^T}
-      </p>
-      <p>
-        où r est le taux actuariel (yield-to-maturity) et T la maturité de l’obligation.
-      </p>
-      <div class="controls">
-        <button id="minusRate">-</button>
-        <span id="currentRate"></span>
-        <button id="plusRate">+</button>
-      </div>
-      <canvas id="bondChart"></canvas>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 - Exemple de simulation ALM</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <div class="container">
+        <h1>Dernières actualités</h1>
+        
+        <!-- Widget Euronews -->
+        <iframe src='https://fr.euronews.com/embed/timeline' scrolling='no' style='border:none; min-height:425px; width:100%; height:100%;'></iframe>
+    </div>
 </body>
 </html>
